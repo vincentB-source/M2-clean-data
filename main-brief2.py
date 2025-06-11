@@ -99,8 +99,8 @@ df_filtered = df_filtered[df_filtered['poids'] > 30]
 # Filtrer les lignes où le loyer_mensuel est supérieur à 0
 df_filtered = df_filtered[df_filtered['loyer_mensuel'] > 0]
 
-# Remplacer les valeurs manquantes par 0
-df_filtered['situation_familiale'] = df_filtered['situation_familiale'].fillna(0)
+# Remplacer les valeurs manquantes par 1 (celibataire)
+df_filtered['situation_familiale'] = df_filtered['situation_familiale'].fillna(1)
 
 # Remplacer les valeurs manquantes par la moyenne de la colonne
 df_filtered['revenu_estime_mois'] = df_filtered['revenu_estime_mois'].fillna(df_filtered['revenu_estime_mois'].mean())
